@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SocietyHub</title>
+    <title>Login Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
-    
+    <!--Login popup HTMl Starts-->
+    <button class="first-button" onclick="togglePopup()"> Sign In</button>
+     <div class="popup" id="popup-1">
+     <div class="content">
+        <button class="close-btn" onclick="togglePopup()">x</button>
+        <h1>Sign In</h1>
+        <div class="input-field">
+            <input placeholder="Email"  type="email" class="validate" >
+        </div>
+        <div class="input-field">
+            <input placeholder="Password" type="password" class="validate" >
+        </div>
+        <button class="second-button">Sign In</button>
+        <p>Don't have an account? <a href="">Sign Up</a></p>
+     </div> 
+    </div>
+    <!--Login popup HTML Ends-->
 </body>
 </html>
