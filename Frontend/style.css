@@ -84,7 +84,7 @@ body {
 
 }
 .main {
-    height: 100vh;
+    height: 300vh;
     width: 100%;
     
 }
@@ -96,6 +96,7 @@ body {
         background-color: aqua;
         height: 70px;
         width: 100%;
+        position: fixed;
         
         
         }
