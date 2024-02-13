@@ -78,3 +78,61 @@ a {
     border: none;
     outline: none;
     }
+body {
+    padding: 0%;
+    margin: 0%;
+
+}
+.main {
+    height: 100vh;
+    width: 100%;
+    
+}
+
+.navbar {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: aqua;
+        height: 70px;
+        width: 100%;
+        
+        
+        }
+#logo {
+    display: flex;
+    height: 70px;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+
+}
+#webname {
+    display: flex;
+    margin-left: 450px;
+    height: 70px;
+    width: 30%;
+    font-family: sans-serif;
+    
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 70px;
+    width: 50%;
+    font-family: monospace;
+    font-size: 15px;
+   
+}
+.buttons a{
+    text-decoration: none;
+    color: black;
+}
+.buttons a :hover{
+    cursor: pointer;
+}
+.first-button a :hover {
+    cursor: pointer;
+}

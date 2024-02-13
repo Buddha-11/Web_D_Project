@@ -8,8 +8,23 @@
     <script src="script.js"></script>
 </head>
 <body>
+    <div class="main">
+        <!--NavBar-->
+        <div class="navbar">
+            <div id="logo">
+                LOGO
+            </div>
+            <div id="webname">
+                <h1>SocHub</h1>
+            </div>
+            <div class="buttons">
+                <a href="index.html">Home</a>
+                <a href="./webpages/events.html">Events</a>
+                <a href="./webpages/societies.html">Societies</a>
+                <a class="first-button" onclick="togglePopup() " style="cursor: pointer;">Login/SignUp</a>
+            </div>
+        </div>
     <!--Login popup HTMl Starts-->
-    <button class="first-button" onclick="togglePopup()"> Sign In</button>
      <div class="popup" id="popup-1">
      <div class="content">
         <button class="close-btn" onclick="togglePopup()">x</button>
@@ -24,6 +39,7 @@
         <p>Don't have an account? <a href="">Sign Up</a></p>
      </div> 
     </div>
+</div>
     <!--Login popup HTML Ends-->
 </body>
 </html>
