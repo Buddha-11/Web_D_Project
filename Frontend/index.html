@@ -4,24 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SocHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
 <body>
     <div class="main">
+        
         <!--NavBar-->
-        <div class="navbar">
+        <div class="navbar" id="navbar">
             <div id="logo">
                 LOGO
             </div>
-            <div id="webname">
-                <h1>SocHub</h1>
-            </div>
+            
             <div class="buttons">
                 <a href="index.html">Home</a>
                 <a href="./webpages/events.html">Events</a>
                 <a href="./webpages/societies.html">Societies</a>
                 <a class="first-button" onclick="togglePopup() " style="cursor: pointer;">Login/SignUp</a>
+            </div>
+        </div>
+        <!--NavBar_Ends-->
+       <div class="cover-image">
+            <img src="images/pratham-gupta-DksFIwoPLAA-unsplash.jpg" alt="" >
+            <div class="overlay-text">
+                <p style="text-align: left;  margin-bottom: 0px; font-size: 2em;">IIIT ALLAHABAD</p>
+                <p style="text-align: left;margin-top: 10px; margin-bottom: 15px; font-size: 100px; font-weight: 600;">Society Hub</p>
+                <p> Welcome to Society Hub, The place where all the societies ranging from technical to cultural meet .</p>
+                    
+               
             </div>
         </div>
     <!--Login popup HTMl Starts-->
@@ -39,7 +53,17 @@
         <p>Don't have an account? <a href="">Sign Up</a></p>
      </div> 
     </div>
-</div>
     <!--Login popup HTML Ends-->
+    <!--Societies Gallery Begins-->
+    <div class="gallery-container">
+        <div class="image"><img src="images/a.jpg" alt=""></div>
+        <div class="image"><img src="images/b.jpg" alt=""></div>
+        <div class="image"><img src="images/c.jpg" alt=""></div>
+        <div class="image"><img src="images/d.jpg" alt=""></div>
+        <div class="image"><img src="images/e.jpg" alt=""></div>
+    </div>
+</div>
+    
+    
 </body>
 </html>
