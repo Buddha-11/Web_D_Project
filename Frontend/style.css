@@ -10,6 +10,14 @@ a{
 body{
     background-color:#252628 ;
 }
+#logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 400px;
+    margin-top: 20px;
+
+}
 .popup .content{
     position: absolute;
     top: 50%;
@@ -106,8 +114,7 @@ body {
 .navbar {
         display: flex;
         justify-content: space-evenly;
-        align-items: center;
-      
+        align-items: center;  
         height: 70px;
         width: 100%;
         position: fixed;
@@ -198,5 +205,6 @@ body {
 .name {
     text-align: center;
     color: white;
-    font-size: 20px;
+    font-size: 20px
+    ;
 }

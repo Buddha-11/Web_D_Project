@@ -17,7 +17,8 @@
         <!--NavBar-->
         <div class="navbar" id="navbar">
             <div id="logo">
-                LOGO
+                <img src="./images/logo.png" alt="logo" style="height: 100px; height: 100px;">
+                <p style="color: white; font-size: larger;">Sochub</p>
             </div>
             
             <div class="buttons">
@@ -44,13 +45,14 @@
         <button class="close-btn" onclick="togglePopup()">x</button>
         <h1>Sign In</h1>
         <div class="input-field">
-            <input placeholder="Email"  type="email" class="validate" >
+            <input placeholder="Email"  type="email" class="validate" id="email">
         </div>
         <div class="input-field">
-            <input placeholder="Password" type="password" class="validate" >
+            <input placeholder="Password" type="password" class="validate" id="password">
         </div>
-        <button class="second-button">Sign In</button>
+        <button class="second-button" onclick="validate()">Sign In</button>
         <p>Don't have an account? <a href="">Sign Up</a></p>
+        <p class="error-message" id="errorMessage" style="color: white; size: 20px;" ></p>
      </div> 
     </div>
     <!--Login popup HTML Ends-->
