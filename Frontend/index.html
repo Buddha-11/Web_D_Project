@@ -3,9 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Society_Hub</title>
+
+    <title>SocHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
-    
+    <div class="main">
+        
+        <!--NavBar-->
+        <div class="navbar" id="navbar">
+            <div id="logo">
+                <img src="./images/logo.png" alt="logo" style="height: 100px; height: 100px;">
+                <p style="color: white; font-size: larger;">Sochub</p>
+            </div>
+            
+            <div class="buttons">
+                <a href="index.html">Home</a>
+                <a href="./webpages/events.html">Events</a>
+                <a href="#" onclick="scrollToDiv('.gallery-container')">Societies</a>
+                <a class="first-button" onclick="togglePopup()" style="cursor: pointer;">Login/SignUp</a>
+            </div>
+        </div>
+        <!--NavBar_Ends-->
+       <div class="cover-image">
+            <img src="images/pratham-gupta-DksFIwoPLAA-unsplash.jpg" alt="" >
+            <div class="overlay-text">
+                <p style="text-align: left;  margin-bottom: 0px; font-size: 2em;">IIIT ALLAHABAD</p>
+                <p style="text-align: left;margin-top: 10px; margin-bottom: 15px; font-size: 100px; font-weight: 600;">Society Hub</p>
+                <p> Welcome to Society Hub, The place where all the societies ranging from technical to cultural meet .</p>
+            </div>
+        </div>
+    <!--Login popup HTMl Starts-->
+     <div class="popup" id="popup-1">
+     <div class="content">
+        <button class="close-btn" onclick="togglePopup()">x</button>
+        <h1>Sign In</h1>
+        <div class="input-field">
+            <input placeholder="Email"  type="email" class="validate" id="email">
+        </div>
+        <div class="input-field">
+            <input placeholder="Password" type="password" class="validate" id="password">
+        </div>
+        <button class="second-button" onclick="validate()">Sign In</button>
+        <p>Don't have an account? <a href="">Sign Up</a></p>
+        <p class="error-message" id="errorMessage" style="color: white; size: 20px;" ></p>
+     </div> 
+    </div>
+    <!--Login popup HTML Ends-->
+    <!--Societies Gallery Begins-->
+    <div class="gallery-container">
+        <a href="./webpages/nirmiti.html"><div class="image"><img src="./images/nirmiti.jpg" alt="" style="height: 300px; width: 250px;"><div class="name">NIRMITI</div></div></a>   
+        <a href="./webpages/geneticx.html"><div class="image"><img src="./images/geneticx.jpg" alt=""style="height: 300px; width: 250px;"><div><div class="name">GENETICX</div></div></div></a>
+        <a href="./webpages/virtuosi.html"><div class="image"><img src="./images/virtuosi.jpg" alt=""style="height: 300px; width: 250px;"><div><div class="name">VIRTUOSI</div></div></div></a>
+        <a href="./webpages/rang.html"><div class="image"><img src="./images/rang.jpg" alt=""style="height: 300px; width: 250px;"><div><div class="name">RANGTARANGINI</div></div></div></a>
+        <a href="./webpages/spirit.html"><div class="image"><img src="./images/sports.jpg" alt=""style="height: 300px; width: 250px;"><div><div class="name">SPIRIT</div></div></div></div></a>
+    </div>
 </body>
 </html>
