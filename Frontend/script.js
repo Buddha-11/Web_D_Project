@@ -24,10 +24,11 @@ function validate() {
     }
 }
 
-function scrollToDiv() {
-    var element = document.getElementByClass("gallery-container");
+function scrollToDiv(className) {
+    var element = document.querySelector(className);
     element.scrollIntoView({ behavior: "smooth", block: "start" });
 }
+
 
 
 
