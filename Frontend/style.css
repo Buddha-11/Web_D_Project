@@ -140,7 +140,7 @@ body {
 
 .buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     height: 70px;
     width: 50%;
