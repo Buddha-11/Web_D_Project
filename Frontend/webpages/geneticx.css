@@ -11,7 +11,7 @@ html {
     width: 100%;
 }
 .navbar{
-    height: 50px;
+    height: 70px;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
