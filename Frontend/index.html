@@ -19,13 +19,13 @@
         <div class="navbar" id="navbar">
             <div id="logo">
                 <img src="./images/logo.png" alt="logo" style="height: 100px; height: 100px;">
-                <p style="color: white; font-size: larger;">Sochub</p>
+                <p style="color: white; font-size: 26px;">Sochub</p>
             </div>
             
             <div class="buttons">
                 <a href="index.html">Home</a>
                 <a href="./webpages/events.html">Events</a>
-                <a href="#" onclick="scrollToDiv('.gallery-container')">Societies</a>
+                <a href="#gall" >Societies</a>
                 <a class="first-button" onclick="togglePopup()" style="cursor: pointer;">Login/SignUp</a>
             </div>
         </div>
@@ -41,7 +41,7 @@
     <!--Login popup HTMl Starts-->
      <div class="popup" id="popup-1">
      <div class="content">
-        <button class="close-btn" onclick="togglePopup()">x</button>
+        <button class="close-btn" onclick="togglePopup()" style="color: white;">x</button>
         <h1>Sign In</h1>
         <div class="input-field">
             <input placeholder="Email"  type="email" class="validate" id="email">
@@ -56,7 +56,7 @@
     </div>
     <!--Login popup HTML Ends-->
     <!--Societies Gallery Begins-->
-    <div class="gallery-container">
+    <div class="gallery-container" id="gall">
         <a href="./webpages/nirmiti.html"><div class="image"><img src="./images/nirmiti.jpg" alt="" style="height: 300px; width: 250px;"><div class="name">NIRMITI</div></div></a>   
         <a href="./webpages/geneticx.html"><div class="image"><img src="./images/geneticx.jpg" alt=""style="height: 300px; width: 250px;"><div><div class="name">GENETICX</div></div></div></a>
         <a href="./webpages/virtuosi.html"><div class="image"><img src="./images/virtuosi.jpg" alt=""style="height: 300px; width: 250px;"><div><div class="name">VIRTUOSI</div></div></div></a>

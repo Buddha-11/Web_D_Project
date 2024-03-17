@@ -1,7 +1,7 @@
 function togglePopup(){
     document.getElementById("popup-1").classList.toggle("active")
 }
-window.onscroll = function() {scrollFunction()};
+
 
 function validate() {
     var email = document.getElementById("email").value;
@@ -21,13 +21,11 @@ function validate() {
     else {
         error.textContent = "";
         alert("Sign In successfully!");
+        togglePopup();
     }
 }
 
-function scrollToDiv(className) {
-    var element = document.querySelector(className);
-    element.scrollIntoView({ behavior: "smooth", block: "start" });
-}
+
 
 
 
