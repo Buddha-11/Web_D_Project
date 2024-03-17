@@ -24,7 +24,20 @@ function validate() {
         togglePopup();
     }
 }
-
+const arr=["lorem1","lorem2","lorem3","lorem4","lorem5","lorem6","lorem7","lorem8","lorem9","lorem10","lorem11","lorem12","lorem13"];
+let i=0;
+ setInterval(live,2500);
+function live(){
+    const list = document.getElementById("feed");
+    list.removeChild(list.firstElementChild);
+    const li =document.createElement("li");
+    li.innerHTML=arr[i];
+    list.appendChild(li);
+    i++;
+    if(i>6)
+    i=0;
+console.log("yes");
+}
 
 
 

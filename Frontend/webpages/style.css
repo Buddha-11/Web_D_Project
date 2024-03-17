@@ -3,6 +3,7 @@ h1 ,h2,h3,h4,h5{
 }
 p{
     font-family: montserrat;
+    color: white;
 }
 a{
     font-family: montserrat;
@@ -186,7 +187,8 @@ body {
  .gallery-container{
     width: 90%;
     padding: 20px;
-    margin: 100px auto;	 
+    margin: 100px auto;
+    margin-top: 10px;	 
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -220,3 +222,27 @@ body {
  html {
     scroll-behavior: smooth;
   }
+.events{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 70px; 
+    
+}
+.events .text{
+    width: 700px;
+    color: white;
+   
+}
+.events .data{
+    width: 500px;
+    
+    border-style: solid;
+    border-radius: 15px;
+    font-family: montserrat;
+    color: white;
+}
+.events .data li{
+    margin: 5px;
+}
