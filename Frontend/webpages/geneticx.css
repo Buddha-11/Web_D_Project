@@ -16,7 +16,7 @@ html {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    position: relative;
+    position: fixed;
     backdrop-filter: blur(15px);
     font-family: montserrat;
     
