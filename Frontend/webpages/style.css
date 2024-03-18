@@ -241,7 +241,8 @@ body {
     border-style: solid;
     border-radius: 15px;
     font-family: montserrat;
-    color: white;
+    color: yellow;
+    border-color: white;
 }
 .events .data li{
     margin: 5px;

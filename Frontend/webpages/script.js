@@ -24,7 +24,7 @@ function validate() {
         togglePopup();
     }
 }
-const arr=["lorem1","lorem2","lorem3","lorem4","lorem5","lorem6","lorem7","lorem8","lorem9","lorem10","lorem11","lorem12","lorem13"];
+const arr=["Event 1","Event 2","Event 3","Event 4","Event 5","Event 6","Event 7","Event 8","Event 9","Event 10","Event 11","Event 12","Event 13"];
 let i=0;
  setInterval(live,2500);
 function live(){
