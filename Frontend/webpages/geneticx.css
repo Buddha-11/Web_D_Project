@@ -283,14 +283,34 @@ h1 ,h2,h3,h4,h5{
     background-color: #212121;
     text-align: center;
     color: white;
-    font-family: montserrat;
+    font-family: 'Courier New', Courier, monospace;
+   
     
     
 }
 .footer h2{
     margin-top: 5px;
 }
+.footer-heading{
+    height: 50px;
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: montserrat;
+}
 .socials{
     height: 150px;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.foot-content{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
