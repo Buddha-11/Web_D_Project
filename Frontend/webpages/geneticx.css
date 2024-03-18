@@ -67,6 +67,7 @@ align-items: center;
     height: 600px;
     width: 100%;
     background-color: black;
+    font-family: montserrat;
 }
 .con{
     height: 300px;
@@ -77,6 +78,7 @@ align-items: center;
     align-items: center;
     font-size: 18px;
     color: beige;
+    font-family: montserrat;
     
 }
 .gallery-container1{
@@ -124,6 +126,7 @@ align-items: center;
     flex-direction: row;
     justify-content: space-evenly   ;
     min-height: 300px;
+    font-family: mo;
 }
 .gallery-container2 .image{
     border-radius: 20px;
