@@ -119,7 +119,7 @@ body {
         height: 80px;
         width: 100%;
         position: fixed;
-        backdrop-filter: blur(15px);
+        backdrop-filter: blur(5px);
         
         }
 #logo {
@@ -233,7 +233,7 @@ body {
 .events .text{
     width: 700px;
     color: white;
-   
+    font-size: 20px;
 }
 .events .data{
     width: 500px;
@@ -242,6 +242,7 @@ body {
     border-radius: 15px;
     font-family: montserrat;
     color: white;
+    font-size: 20px;
 }
 .events .data li{
     margin: 5px;
