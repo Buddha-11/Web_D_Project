@@ -24,7 +24,7 @@ function validate() {
         togglePopup();
     }
 }
-const arr=["Minimal Mania (Aparoksha'24)","3 Musketeers (Aparoksha'24)","Inter IIIT (Asmita'24)","Cultural Evening (Asmita'24)","losing Ceremony(Asmita'24)","Jam Night (Virtuosi)","DJ Night(Asmita'24)","C-fresh (Aparoksha'24)","Decode (Aparoksha'24)","Prove Me Wrong (Aparoksha'24)","Git Hero (Aparoksha'24)","Functional Programming (Geek Haven)"];
+const arr=["Minimal Mania (Aparoksha'24)","3 Musketeers (Aparoksha'24)","Inter IIIT (Asmita'24)","Cultural Evening (Asmita'24)","Closing Ceremony(Asmita'24)","Jam Night (Virtuosi)","DJ Night(Asmita'24)","C-fresh (Aparoksha'24)","Decode (Aparoksha'24)","Prove Me Wrong (Aparoksha'24)","Git Hero (Aparoksha'24)","Functional Programming (Geek Haven)"];
 let i=8;
  setInterval(live,2000);
 function live(){
