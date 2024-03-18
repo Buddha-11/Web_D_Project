@@ -7,7 +7,7 @@ html {
   }
 
 .main {
-    height: 200vh;
+    height: 300vh;
     width: 100%;
 }
 .navbar{
@@ -21,13 +21,20 @@ html {
     font-family: montserrat;
     
 }
+.space1{
+    height: 50px;
+    width: 2%;
+}
 #space{
 height: 50px;
 width: 60%;
 display: flex;
 align-items: center;
 
+
+
 }
+
 .nav-con{
     height: 50px;
     width: 40%;
@@ -61,6 +68,8 @@ align-items: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: montserrat;
+    
    
 }
 .about-us{
@@ -143,4 +152,23 @@ align-items: center;
 .gall{
     display: flex;
     flex-direction: column;
+}
+.footer{
+    height: 300px;
+    width: 100%px;
+    margin: 0%;
+    padding: 0%;
+    background-color: #212121;
+    text-align: center;
+    color: white;
+    font-family: montserrat;
+    
+    
+}
+.footer h2{
+    margin-top: 5px;
+}
+.socials{
+    height: 150px;
+    width: 100%;
 }
