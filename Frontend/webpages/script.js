@@ -24,9 +24,9 @@ function validate() {
         togglePopup();
     }
 }
-const arr=["Event 1","Event 2","Event 3","Event 4","Event 5","Event 6","Event 7","Event 8","Event 9","Event 10","Event 11","Event 12","Event 13"];
-let i=0;
- setInterval(live,2500);
+const arr=["Minimal Mania (Aparoksha'24)","3 Musketeers (Aparoksha'24)","Inter IIIT (Asmita'24)","Cultural Evening (Asmita'24)","Closing Ceremony(Asmita'24)","Jam Night (Virtuosi)","DJ Night(Asmita'24)","C-fresh (Aparoksha'24)","Decode (Aparoksha'24)","Prove Me Wrong (Aparoksha'24)","Git Hero (Aparoksha'24)","Functional Programming (Geek Haven)"];
+let i=8;
+ setInterval(live,2000);
 function live(){
     const list = document.getElementById("feed");
     list.removeChild(list.firstElementChild);
@@ -34,7 +34,7 @@ function live(){
     li.innerHTML=arr[i];
     list.appendChild(li);
     i++;
-    if(i>6)
+    if(i>=arr.length)
     i=0;
 console.log("yes");
 }
