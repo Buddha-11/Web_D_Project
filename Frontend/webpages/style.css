@@ -58,6 +58,7 @@ body{
     box-shadow: 5px 5px 30px rgba(0,0,0,0.3);
 }
 
+
 a {
     font-weight: 600;
     
@@ -248,3 +249,25 @@ body {
     margin: 5px;
 }
 
+.animated-text{
+    letter-spacing: 7px;
+    width:100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation:  typing 2s steps(11),cursor .9s step-end infinite alternate;
+}
+.animated-text2{
+    width:100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation:  typing 2s steps(70),cursor 3.4s step-end infinite alternate;
+}
+@keyframes cursor {
+    50% { border-color: transparent; }
+   
+  }
+  
+  @keyframes typing
+  {
+    from{ width: 0 }
+  }
