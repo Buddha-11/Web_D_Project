@@ -271,3 +271,56 @@ body {
   {
     from{ width: 0 }
   }
+
+  footer{
+    width: 100%;
+  
+    bottom: 0;
+    background: linear-gradient(to right, #000000, #951b1b);
+    color: #fff;
+    padding: 10px 0 30px;
+    border-top-left-radius: 15px; font-size: 13px; line-height: 10px;
+    border-top-right-radius: 15px
+}
+.row{
+width: 85%;
+margin: auto;
+display: flex;
+flex-wrap: wrap;
+align-items: flex-start; 
+justify-content: space-between;
+}
+.col{
+flex-basis: 15%; padding: 10px;
+}
+.logo{
+    margin-left: 38px;
+width: 80px;
+margin-bottom: 10px;
+}
+.col h3{
+width: fit-content;
+margin-top:10px;
+margin-bottom: 10px;
+position: relative;
+}
+.email-id{
+width: fit-content;
+border-bottom: 1px solid #ccc;
+margin:20px 0;
+}
+
+ul li{
+list-style: none;
+ margin-bottom: 12px;
+margin-left: 0px;
+}
+
+ul li a{
+text-decoration:none;
+color:#fff;
+}
+.fixed{
+    margin-left: 40px;
+
+}
