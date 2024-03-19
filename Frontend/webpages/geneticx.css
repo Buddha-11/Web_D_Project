@@ -225,8 +225,7 @@ align-items: center;
     outline: none;
 } 
 .second-button:active{
-    /* background: rgba(255,255,255,0.05); */
-    background: red;
+    background: rgba(255,255,255,0.05);
     
     border: none;
     outline: none;
