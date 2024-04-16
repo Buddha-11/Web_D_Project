@@ -41,7 +41,7 @@ userSchema.statics.login = async function(email, password) {
   // Find user by email or username
   const user = await this.findOne({
     $or: [
-       { email, username}
+       { email}
     ]
   });
 
