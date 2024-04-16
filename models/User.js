@@ -35,28 +35,22 @@ userSchema.pre('save', async function(next) {
 
 // static method to login user
 userSchema.statics.login = async function(email, password) {
-  // Normalize emailOrUsername to lowercase for case-insensitive search
-  // const normalizedInput = emailOrUsername.toLowerCase();
-
-  // Find user by email or username
   const user = await this.findOne({
     $or: [
-       { email}
+       {email}
     ]
   });
 
   if (!user) {
     throw new Error('User not found');
   }
-
-  // Check if the provided password matches the hashed password
   const isMatch = await bcrypt.compare(password, user.password);
 
   if (!isMatch) {
     throw new Error('Incorrect password');
   }
 
-  return user; // Return the authenticated user
+  return user; 
 };
 const User = mongoose.model('user', userSchema);
 
