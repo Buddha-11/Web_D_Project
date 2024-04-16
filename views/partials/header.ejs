@@ -26,8 +26,13 @@
                 <a href="#main">Home</a>
                 <a href="#events">Events</a>
                 <a href="#soc" >Societies</a>
+                <% if (user) { %>
+                    <h5 style="color: white;">Welcome, <%= user.email %></h5>
+                    <a href="/logout">Log out</a>
+                    <% } else { %>
                 <a class="first-button" href="/login" style="cursor: pointer;">Login</a>
                 <a class="first-button" href="/signup" style="cursor: pointer;">Signup</a>
+                <% } %>
             </div>
         </div>
         <!--NavBar_Ends-->
