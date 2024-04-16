@@ -10,6 +10,14 @@ const userSchema = new mongoose.Schema({
     lowercase: true,
     validate: [isEmail, 'Please enter a valid email']
   },
+  username: {
+    type: String,
+    required: [true, 'Please enter a username'],
+    unique: true,
+    minlength: [3, 'Minimum username length is 3 characters'],
+    maxlength: [20, 'Maximum username length is 20 characters'],
+    
+  },
   password: {
     type: String,
     required: [true, 'Please enter a password'],
@@ -27,17 +35,29 @@ userSchema.pre('save', async function(next) {
 
 // static method to login user
 userSchema.statics.login = async function(email, password) {
-  const user = await this.findOne({ email });
-  if (user) {
-    const auth = await bcrypt.compare(password, user.password);
-    if (auth) {
-      return user;
-    }
-    throw Error('incorrect password');
-  }
-  throw Error('incorrect email');
-};
+  // Normalize emailOrUsername to lowercase for case-insensitive search
+  // const normalizedInput = emailOrUsername.toLowerCase();
 
+  // Find user by email or username
+  const user = await this.findOne({
+    $or: [
+       { email, username}
+    ]
+  });
+
+  if (!user) {
+    throw new Error('User not found');
+  }
+
+  // Check if the provided password matches the hashed password
+  const isMatch = await bcrypt.compare(password, user.password);
+
+  if (!isMatch) {
+    throw new Error('Incorrect password');
+  }
+
+  return user; // Return the authenticated user
+};
 const User = mongoose.model('user', userSchema);
 
 module.exports = User;
