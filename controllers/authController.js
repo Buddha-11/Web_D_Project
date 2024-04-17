@@ -141,5 +141,6 @@ module.exports.login_admin_post = async (req, res) => {
 
 module.exports.logout_get = (req, res) => {
   res.cookie('jwt', '', { maxAge: 1 });
-  res.render('/',{title: 'Home'});
+  res.redirect('/');
+
 }
