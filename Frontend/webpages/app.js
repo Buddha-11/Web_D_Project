@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');
 const cookieParser = require('cookie-parser');
-const { requireAuth, checkUser, checkOwner } = require('./middleware/authMiddleware');
+const { requireAuth, checkUser } = require('./middleware/authMiddleware');
 
 const app = express();
 
@@ -16,12 +16,12 @@ app.set('view engine', 'ejs');
 
 // database connection
 const dbURI = 'mongodb+srv://snehal:test@cc.8hdyetj.mongodb.net/test?retryWrites=true&w=majority&appName=CC';
-mongoose.connect(dbURI)
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
   .then((result) => app.listen(3000))
   .catch((err) => console.log(err));
 
 // routes
- app.get('*', checkUser);
+app.get('*', checkUser);
 app.get('/', (req, res) => res.render('home'));
-app.get('/geneticx', requireAuth, (req, res) => res.render('geneticx'));
+app.get('/smoothies', requireAuth, (req, res) => res.render('smoothies'));
 app.use(authRoutes);

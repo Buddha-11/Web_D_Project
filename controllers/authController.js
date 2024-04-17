@@ -1,5 +1,7 @@
 const User = require("../models/User");
+const Owner = require("../models/Owner");
 const jwt = require('jsonwebtoken');
+
 
 // handle errors
 const handleErrors = (err) => {
@@ -47,6 +49,14 @@ const createToken = (id) => {
   });
 };
 
+// creating json web token for admin
+const maxAge2 = 3 * 24 * 60 * 60;
+const createToken2 = (id) => {
+  return jwt.sign({ id }, 'net ninja secret_admin', {
+    expiresIn: maxAge2
+  });
+};
+
 // controller actions
 module.exports.signup_get = (req, res) => {
   res.render('signup');
@@ -57,6 +67,12 @@ module.exports.geneticx_get = (req, res) => {
 
 module.exports.login_get = (req, res) => {
   res.render('login');
+}
+module.exports.login_admin_get = (req, res) => {
+  res.render('login_admin');
+}
+module.exports.signup_admin_get = (req, res) => {
+  res.render('signup_admin');
 }
 
 module.exports.signup_post = async (req, res) => {
@@ -75,6 +91,22 @@ module.exports.signup_post = async (req, res) => {
  
 }
 
+module.exports.signup_admin_post = async (req, res) => {
+  const { email, username, password } = req.body;
+
+  try {
+    const owner = await Owner.create({ email,username, password });
+    const token2 = createToken2(owner._id);
+    res.cookie('jwt', token2, { httpOnly: true, maxAge: maxAge * 1000 });
+    res.status(201).json({ user: owner._id });
+  }
+  catch(err) {
+    const errors = handleErrors(err);
+    res.status(400).json({ errors });
+  }
+ 
+}
+
 module.exports.login_post = async (req, res) => {
   const {email, password } = req.body;
 
@@ -83,6 +115,22 @@ module.exports.login_post = async (req, res) => {
     const token = createToken(user._id);
     res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
     res.status(200).json({ user: user._id });
+  } 
+  catch (err) {
+    const errors = handleErrors(err);
+    res.status(400).json({ errors });
+  }
+
+}
+
+module.exports.login_admin_post = async (req, res) => {
+  const {email, password } = req.body;
+
+  try {
+    const owner = await Owner.login(email, password);
+    const token = createToken2(owner._id);
+    res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
+    res.status(200).json({ user: owner._id });
   } 
   catch (err) {
     const errors = handleErrors(err);
