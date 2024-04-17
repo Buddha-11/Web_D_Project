@@ -4,17 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SocHub  </title>
+    <title>SocHub</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
-<<<<<<< HEAD
-    <link rel="stylesheet" href="/style.css">
-=======
     <link rel="stylesheet" href="style.css">
->>>>>>> edfa1b340aeebb6d476e7f7024bab8aa9ab4605d
-   
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="main" id="main">
@@ -22,7 +18,7 @@
         <!--NavBar-->
         <div class="navbar" id="navbar">
             <div id="logo">
-                <img src="/images/logo.png" alt="logo" style="height: 80px; height: 80px;">
+                <img src="./images/logo.png" alt="logo" style="height: 80px; height: 80px;">
                 <p style="color: white; font-size: 26px;">Sochub</p>
             </div>
             
@@ -30,14 +26,7 @@
                 <a href="#main">Home</a>
                 <a href="#events">Events</a>
                 <a href="#soc" >Societies</a>
-                <% if (user) { %>
-                    <h5 style="color: white;">Welcome, <%= user.username %></h5>
-                    <a href="/logout">Log out</a>
-                    <% } else { %>
-                <a class="first-button" href="/login" style="cursor: pointer;">Login</a>
-                <a class="first-button" href="/signup" style="cursor: pointer;">Signup</a>
-                <% } %>
+                <a class="first-button" onclick="togglePopup()" style="cursor: pointer;">Login/SignUp</a>
             </div>
         </div>
         <!--NavBar_Ends-->
-       

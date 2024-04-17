@@ -1,24 +1,30 @@
 const User = require("../models/User");
+const Owner = require("../models/Owner");
 const jwt = require('jsonwebtoken');
+
 
 // handle errors
 const handleErrors = (err) => {
   console.log(err.message, err.code);
-  let errors = { email: '', password: '' };
+  let errors = { email: '',username: '', password: '' };
 
-  // incorrect email
-  if (err.message === 'incorrect email') {
-    errors.email = 'That email is not registered';
+  if (err.message === 'User not found') {
+    errors.email = 'Invalid credentials';
+    errors.username = 'Invalid credentials';
   }
-
   // incorrect password
   if (err.message === 'incorrect password') {
     errors.password = 'That password is incorrect';
   }
 
   // duplicate email error
-  if (err.code === 11000) {
+  if (err.code === 11000 && err.message.includes('email')) {
     errors.email = 'that email is already registered';
+    return errors;
+  }
+  // duplicate username error
+  if (err.code === 11000 && err.message.includes('username')) {
+    errors.username = 'That username is already registered';
     return errors;
   }
 
@@ -43,20 +49,37 @@ const createToken = (id) => {
   });
 };
 
+// creating json web token for admin
+const maxAge2 = 3 * 24 * 60 * 60;
+const createToken2 = (id) => {
+  return jwt.sign({ id }, 'net ninja secret_admin', {
+    expiresIn: maxAge2
+  });
+};
+
 // controller actions
 module.exports.signup_get = (req, res) => {
   res.render('signup',{title: 'Sign Up'});
+}
+module.exports.geneticx_get = (req, res) => {
+  res.render('geneticx');
 }
 
 module.exports.login_get = (req, res) => {
   res.render('login',{title: 'Login'});
 }
+module.exports.login_admin_get = (req, res) => {
+  res.render('login_admin');
+}
+module.exports.signup_admin_get = (req, res) => {
+  res.render('signup_admin');
+}
 
 module.exports.signup_post = async (req, res) => {
-  const { email, password } = req.body;
+  const { email, username, password } = req.body;
 
   try {
-    const user = await User.create({ email, password });
+    const user = await User.create({ email,username, password });
     const token = createToken(user._id);
     res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
     res.status(201).json({ user: user._id });
@@ -68,14 +91,46 @@ module.exports.signup_post = async (req, res) => {
  
 }
 
+module.exports.signup_admin_post = async (req, res) => {
+  const { email, username, password } = req.body;
+
+  try {
+    const owner = await Owner.create({ email,username, password });
+    const token2 = createToken2(owner._id);
+    res.cookie('jwt', token2, { httpOnly: true, maxAge: maxAge * 1000 });
+    res.status(201).json({ user: owner._id });
+  }
+  catch(err) {
+    const errors = handleErrors(err);
+    res.status(400).json({ errors });
+  }
+ 
+}
+
 module.exports.login_post = async (req, res) => {
-  const { email, password } = req.body;
+  const {email, password } = req.body;
 
   try {
     const user = await User.login(email, password);
     const token = createToken(user._id);
     res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
     res.status(200).json({ user: user._id });
+  } 
+  catch (err) {
+    const errors = handleErrors(err);
+    res.status(400).json({ errors });
+  }
+
+}
+
+module.exports.login_admin_post = async (req, res) => {
+  const {email, password } = req.body;
+
+  try {
+    const owner = await Owner.login(email, password);
+    const token = createToken2(owner._id);
+    res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
+    res.status(200).json({ user: owner._id });
   } 
   catch (err) {
     const errors = handleErrors(err);
