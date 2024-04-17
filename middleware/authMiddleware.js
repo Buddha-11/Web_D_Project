@@ -9,14 +9,14 @@ const requireAuth = (req, res, next) => {
     jwt.verify(token, 'net ninja secret', (err, decodedToken) => {
       if (err) {
         console.log(err.message);
-        res.redirect('/login');
+        res.render('/login',{title: 'Login'});
       } else {
         console.log(decodedToken);
         next();
       }
     });
   } else {
-    res.redirect('/login');
+    res.render('/login',{title: 'Login'});
   }
 };
 

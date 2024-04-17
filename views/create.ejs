@@ -1,0 +1,21 @@
+
+<!-- <%- include("./partials/header.ejs") %> -->
+
+
+  <div class="create-event content">
+    <form action="/events" method="POST">
+      <label for="title">Event title:</label>
+      <input type="text" id="title" name="title" required>
+      <label for="description">Event description:</label>
+      <input type="text" id="description" name="description" required>
+      <label for="location">Event location:</label>
+      <input type="text" id="location" name="location" required>
+      <label for="timings">Event timings:</label>
+      <textarea id="timings" name="timings" required></textarea>
+      <button>Submit</button>
+    </form>
+  </div>
+
+  <!-- <%- include("./partials/footer.ejs") %> -->
+</body>
+</html>

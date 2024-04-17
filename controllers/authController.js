@@ -45,11 +45,11 @@ const createToken = (id) => {
 
 // controller actions
 module.exports.signup_get = (req, res) => {
-  res.render('signup');
+  res.render('signup',{title: 'Sign Up'});
 }
 
 module.exports.login_get = (req, res) => {
-  res.render('login');
+  res.render('login',{title: 'Login'});
 }
 
 module.exports.signup_post = async (req, res) => {
@@ -86,5 +86,5 @@ module.exports.login_post = async (req, res) => {
 
 module.exports.logout_get = (req, res) => {
   res.cookie('jwt', '', { maxAge: 1 });
-  res.redirect('/');
+  res.render('/',{title: 'Home'});
 }
