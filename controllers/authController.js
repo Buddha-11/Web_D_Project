@@ -52,21 +52,21 @@ const createToken = (id) => {
 // creating json web token for admin
 const maxAge2 = 3 * 24 * 60 * 60;
 const createToken2 = (id) => {
-  return jwt.sign({ id }, 'net ninja secret_admin', {
+  return jwt.sign({ id }, 'net ninja secret', {
     expiresIn: maxAge2
   });
 };
 
-// controller actions
+//controller actions
 module.exports.signup_get = (req, res) => {
-  res.render('signup',{title: 'Sign Up'});
+  res.render('signup');
 }
 module.exports.geneticx_get = (req, res) => {
   res.render('geneticx');
 }
 
 module.exports.login_get = (req, res) => {
-  res.render('login',{title: 'Login'});
+  res.render('login');
 }
 module.exports.login_admin_get = (req, res) => {
   res.render('login_admin');
@@ -98,7 +98,7 @@ module.exports.signup_admin_post = async (req, res) => {
     const owner = await Owner.create({ email,username, password });
     const token2 = createToken2(owner._id);
     res.cookie('jwt', token2, { httpOnly: true, maxAge: maxAge * 1000 });
-    res.status(201).json({ user: owner._id });
+    res.status(201).json({ owner: owner._id });
   }
   catch(err) {
     const errors = handleErrors(err);
@@ -128,9 +128,9 @@ module.exports.login_admin_post = async (req, res) => {
 
   try {
     const owner = await Owner.login(email, password);
-    const token = createToken2(owner._id);
-    res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
-    res.status(200).json({ user: owner._id });
+    const token2 = createToken2(owner._id);
+    res.cookie('jwt', token2, { httpOnly: true, maxAge: maxAge * 1000 });
+    res.status(200).json({ owner: owner._id });
   } 
   catch (err) {
     const errors = handleErrors(err);

@@ -37,6 +37,7 @@
     const password = form.password.value;
 
     try {
+      console.log(email);
       const res = await fetch('/signup_admin', { 
         method: 'POST', 
         body: JSON.stringify({ email,username, password }),

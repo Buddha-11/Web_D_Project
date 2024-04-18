@@ -1,4 +1,4 @@
-<%- include('partials/login_header'); -%>
+ <%- include('partials/login_header'); -%>
 <div class="space"></div>
 <form action="/login">
   <h2>Login</h2>
@@ -10,12 +10,10 @@
   <h4><a href="./login_admin" style="color: #FEE996;text-decoration: none;">Admin Login</a></h4>
   <div class="password error"></div>
 
-  <button>login</button>
-</form>
+  <button>login</button> </form> 
 
 
-
-<script>
+ <script>
   const form = document.querySelector('form');
   const emailError = document.querySelector('.email.error');
   const passwordError = document.querySelector('.password.error');

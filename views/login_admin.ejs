@@ -1,6 +1,6 @@
 <%- include('partials/login_header'); -%>
 <div class="space"></div>
-<form action="/login_admin">
+<form action="./login_admin">
   <h2>Admin Login</h2>
   <label for="email">Email</label>
   <input type="text" name="email"  />
@@ -31,24 +31,26 @@
     const password = form.password.value;
 
     try {
-      const res = await fetch('/login_admin', { 
-        method: 'POST', 
-        body: JSON.stringify({ email, password }),
-        headers: {'Content-Type': 'application/json'}
-      });
-      const data = await res.json();
-      console.log(data);
-      if (data.errors) {
-        emailError.textContent = data.errors.email;
-        passwordError.textContent = data.errors.password;
-      }
-      if (data.user) {
-        location.assign('/');
-      }
-
-    }
-    catch (err) {
-      console.log(err);
-    }
+  const res = await fetch('./login_admin', {
+    method: 'POST',
+    body: JSON.stringify({ email, password }),
+    headers: { 'Content-Type': 'application/json' }
   });
+
+  const data = await res.json();
+  console.log('Response:', data);
+  cp
+  // Handle response based on its structure
+  if (data && data.owner) {
+    location.assign('./');
+  } else if (data && data.errors) {
+    // Handle validation errors
+    // Update error messages on the form
+  } else {
+    console.error('Unexpected response format:', data);
+  }
+} catch (error) {
+  console.error('Error:', error);
+}});
+
 </script>

@@ -1,0 +1,70 @@
+<%- include('partials/header'); -%>
+
+       <div class="cover-image">
+            <img src="images/pratham-gupta-DksFIwoPLAA-unsplash.jpg" alt="" id="c-img">
+            <div class="overlay-text">
+                <p style="text-align: left;  margin-bottom: 0px; font-size: 2em;">IIIT ALLAHABAD's</p>
+                <p style="text-align: left; margin-top: 10px; margin-bottom: 5px; font-size: 100px; font-weight: 600;" class="animated-text">Society Hub</p>
+
+                <p style="font-size: 20px; font-weight: bold; padding: 10px; color: whitesmoke; text-align: left;" class="animated-text2">From Socio-Spectacular to Unforgettable: <br>Elevating Society Events and Fests Management to New Heights!</p>
+                
+            </div>
+        </div>
+    <!--Login popup HTMl Starts-->
+     <div class="popup" id="popup-1">
+     <div class="content">
+        <button class="close-btn" onclick="togglePopup()" style="color: white;">x</button>
+        <h1>Sign In</h1>
+        <div class="input-field">
+            <input placeholder="Email"  type="email" class="validate" id="email">
+        </div>
+        <div class="input-field">
+            <input placeholder="Password" type="password" class="validate" id="password">
+        </div>
+        <button class="second-button" onclick="validate()">Sign In</button>
+        <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+        <p class="error-message" id="errorMessage" style="color: white; size: 20px;" ></p>
+     </div> 
+    </div>
+    <!--Login popup HTML Ends-->
+    <!--Events -->
+    <div class="events" id="events">
+        <div class="text">
+            <p style="font-size: 40px; margin-bottom: 5px; font-weight: 600;">
+                <u style="color: red;"> 
+                    <span style="color: white; text-decoration: underline yellow; margin-bottom: 5px;">Events</span>
+                </u>
+            </p>
+            
+            
+            <p style="margin-top: 40px; font-size: 20px;">At IIITA ALLAHABAD , we believe in fostering a vibrant and inclusive community through a myriad of exciting events organized by our diverse range of societies. Our Events Management Website serves as your one-stop destination to stay updated on all the upcoming happenings, from academic symposiums to cultural festivals and everything in between.</p>
+        </div>
+        <div class="data" style="color: yellow; border-color: white;">
+            <ul id="feed">
+                <li>Minimal Mania (Aparoksha'24)</li>
+                <li>3 Musketeers (Aparoksha'24)</li>
+                <li>Inter IIIT (Asmita'24)</li>
+                <li>Cultural Evening (Asmita'24)</li>
+                <li>Closing Ceremony(Asmita'24)</li>
+                <li>Jam Night (Virtuosi)</li>
+                <li>DJ Night(Asmita'24)</li>
+                <li>C-fresh (Aparoksha'24)</li>
+        </div>
+    </div>
+    <!--Societies Gallery Begins-->
+    <p id="soc" style="font-size: 40px; margin-bottom: 5px; font-weight: 600; margin-left: 80px; margin-top: 100px;">
+        <span style="border-bottom: 5px solid yellow;">Societies</span>
+    </p>
+    
+
+    <div class="gallery-container" id="gall">
+        <a href="nirmiti.html"><div class="image"><img src="./images/nirmiti.jpg" alt="" style="height: 300px; width: 250px;"><div class="name">NIRMITI</div></div></a>   
+        <a href="geneticx.html"><div class="image"><img src="./images/geneticx.jpg" alt=""style="height: 300px; width: 250px;"><div><div class="name">GENETICX</div></div></div></a>
+        <a href="https://virtuosi.iiita.ac.in"><div class="image"><img src="./images/virtuosi.jpg" alt=""style="height: 300px; width: 250px;"><div><div class="name">VIRTUOSI</div></div></div></a>
+        <a href="rang.html"><div class="image"><img src="./images/rang.jpg" alt=""style="height: 300px; width: 250px;"><div><div class="name">RANGTARANGINI</div></div></div></a>
+        <a href="spirit.html"><div class="image"><img src="./images/sports.jpg" alt=""style="height: 300px; width: 250px;"><div><div class="name">SPIRIT</div></div></div></div></a>
+    </div>
+
+
+
+    <%- include('partials/footer'); -%>
