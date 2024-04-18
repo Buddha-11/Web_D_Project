@@ -17,7 +17,7 @@ const requireAuth = (req, res, next) => {
       }
     });
   } else {
-    res.render('/login',{title: 'Login'});
+    res.render('/login');
   }
 };
 
