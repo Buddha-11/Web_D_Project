@@ -14,6 +14,7 @@ router.get('/signup_admin', authController.signup_admin_post);
 router.post('/login_admin', authController.login_admin_post);
 router.get('/logout', authController.logout_get);
 router.get('/apply', authController.apply_get);
+router.get('/submit', authController.submit_get);
 
 
 module.exports = router;

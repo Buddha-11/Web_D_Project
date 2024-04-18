@@ -12,7 +12,7 @@ router.post('/apply',(req,res)=>{
 const apply = new Apply(req.body);
 apply.save()
     .then((result)=>{
-    res.redirect('/geneticx')
+    res.redirect('/submit')
     })
     .catch((err)=>{
     console.log(err)
