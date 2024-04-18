@@ -72,7 +72,7 @@ module.exports.login_get = (req, res) => {
   res.render('login');
 }
 module.exports.submit_get = (req, res) => {
-  res.render('submit');
+  res.render('');
 }
 module.exports.login_admin_get = (req, res) => {
   res.render('login_admin');
