@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');
 const cookieParser = require('cookie-parser');
-const { requireAuth,checkOwner } = require('./middleware/authMiddleware');
+const { requireAuth,checkOwner, checkUser } = require('./middleware/authMiddleware');
 const eventRoutes = require('./routes/EventRoutes')
 const app = express();
 
@@ -24,7 +24,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 // routes
 app.use('/events',eventRoutes);
-app.get('*', checkOwner);
+app.get('*', checkUser);
 app.get('/', (req, res) => res.render('home'));
 app.get('/geneticx', requireAuth, (req, res) => res.render('geneticx'));
 app.use(authRoutes);

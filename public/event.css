@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff; /* White text color */
+}
+
+.events {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #333; /* Dark gray background for events container */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    color: #ff4444; /* Reddish color for heading */
+}
+
+.single {
+    display: block;
+    text-decoration: none;
+    color: #fff; /* White text color */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.single:hover {
+    background-color: #555; /* Darker background color on hover */
+}
+
+.title {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.timings {
+    font-size: 14px;
+    color: #ccc; /* Light gray color for timings */
+}
+
+button {
+    display: block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #ff4444; /* Red background for button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #c0392b; /* Darker red on hover */
+}

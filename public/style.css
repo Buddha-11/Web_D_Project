@@ -194,13 +194,12 @@ body {
 
   footer{
     width: 100%;
-  
+   margin-top: 79px;
     bottom: 0;
     background: linear-gradient(to right, #000000, #951b1b);
     color: #fff;
     padding: 10px 0 30px;
-    border-top-left-radius: 15px; font-size: 13px; line-height: 10px;
-    border-top-right-radius: 15px
+   
 }
 .row{
 width: 85%;

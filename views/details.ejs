@@ -1,19 +1,32 @@
 
- <%- include("./partials/header_events.ejs") %>
+ <%- include("./partials/header_event_detail.ejs") %>
 
 
 
   <div class="details content">
     <h2><%= event.title %></h2>
     <div class="content">
-      <div><p><%= event.description %></p></div>
-      <div><p><%= event.timings %></p></div>
-      <div><p><%= event.location %></p></div>
-    </div>
+      <div class="detail-box">
+          <p class="detail-label">Event Description:</p>
+          <p class="detail-value"><%= event.description %></p>
+      </div>
+      <div class="detail-box">
+          <p class="detail-label">Event Timings:</p>
+          <p class="detail-value"><%= event.timings %></p>
+      </div>
+      <div class="detail-box">
+          <p class="detail-label">Location:</p>
+          <p class="detail-value"><%= event.location %></p>
+      </div>
+      <div class="detail-box">
+          <p class="detail-label">Registration Link:</p>
+          <p class="detail-value"><a href="<%= event.register %>" style="color: rgb(10, 182, 245);"><%= event.register %></a></p>
+      </div>
+  </div>
     <a class="delete" data-doc="<%= event._id %>">delete</a>
   </div>
 
-  <%- include("./partials/footer.ejs") %>
+ 
 
   <script>
     const trashcan = document.querySelector('a.delete');

@@ -16,6 +16,10 @@ const eventSchema = new Schema({
     timings:{
         type:String,
         required:true
+    },
+    register:{
+        type:String,
+        required:true
     }
 },{timestamps:true});
 
