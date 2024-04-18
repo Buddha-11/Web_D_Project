@@ -18,6 +18,6 @@ const eventSchema = new Schema({
         required:true
     }
 },{timestamps:true});
-// looks for plural of Blog
+
 const Event = mongoose.model('Event',eventSchema);
 module.exports = Event;

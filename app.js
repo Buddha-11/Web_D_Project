@@ -20,6 +20,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then((result) => app.listen(3000))
   .catch((err) => console.log(err));
 
+  app.use(express.urlencoded({extended:true}));
+
 // routes
 app.use('/events',eventRoutes);
 app.get('*', checkUser);
