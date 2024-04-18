@@ -64,6 +64,9 @@ module.exports.signup_get = (req, res) => {
 module.exports.geneticx_get = (req, res) => {
   res.render('geneticx');
 }
+module.exports.apply_get = (req, res) => {
+  res.render('apply');
+}
 
 module.exports.login_get = (req, res) => {
   res.render('login');
