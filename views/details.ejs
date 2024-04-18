@@ -6,7 +6,9 @@
   <div class="details content">
     <h2><%= event.title %></h2>
     <div class="content">
-      <p><%= event.body %></p>
+      <div><p><%= event.description %></p></div>
+      <div><p><%= event.timings %></p></div>
+      <div><p><%= event.location %></p></div>
     </div>
     <a class="delete" data-doc="<%= event._id %>">delete</a>
   </div>
