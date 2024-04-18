@@ -85,7 +85,7 @@
            
             
          <!--Join popup HTMl Starts-->
-     <div class="popup" id="popup-1">
+     <!-- <div class="popup" id="popup-1">
         <div class="content">
            <button class="close-btn" onclick="togglePopup()" style="color: white;">x</button>
            <h1>Join Us</h1>
@@ -93,22 +93,22 @@
                <input placeholder="Email"  type="email" class="validate" id="email">
            </div>
            <div class="input-field">
-            <input placeholder="Name"  type="email" class="validate" id="email">
+            <input placeholder="Name"  type="email" class="validate" id="name">
             </div>
             <div class="input-field">
-                <input placeholder="Roll No."  type="email" class="validate" id="email">
+                <input placeholder="Roll No."  type="email" class="validate" id="roll">
             </div>
             <div class="input-field">
-                <input placeholder="Contact No."  type="email" class="validate" id="email">
+                <input placeholder="Contact No."  type="email" class="validate" id="contact">
             </div>
            <div class="input-field">
-               <input placeholder="Password" type="password" class="validate" id="password">
+               <input placeholder="Drive-link" type="text" class="validate" id="drive">
            </div>
-           <button class="second-button" onclick="validate()">Submit</button>
+           <button class="second-button" onclick="func()">Submit</button>
            
            <p class="error-message" id="errorMessage" style="color: white; size: 20px;" ></p>
         </div> 
-       </div>
+       </div> -->
        <!--Join popup HTML Ends-->  
        <div class="footer">
         <div class="footer-heading">
@@ -132,5 +132,30 @@
     function togglePopup(){
     document.getElementById("popup-1").classList.toggle("active")
 }
+    async function func(){
+        const email =document.getElementById('email').value;
+        const roll =document.getElementById('roll').value;
+        const name =document.getElementById('name').value;
+        const contact =document.getElementById('contact').value;
+        const drive =document.getElementById('drive').value;
+        try{
+            const res = await fetch('/geneticx',{
+                method: 'POST',
+                body: JSON.stringify({email,roll,name,contact,drive}),
+                headers: {'Content-Type': 'application/json'}
+            });
+            const data = await res.json();
+        console.log(data);
+        
+        if (data.user) {
+            location.assign('/geneticx');
+        }
+
+        }
+        catch (err) {
+        console.log(err);
+        }
+            }
+        
 </script>
 </html>
