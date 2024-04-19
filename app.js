@@ -4,6 +4,7 @@ const authRoutes = require('./routes/authRoutes');
 const cookieParser = require('cookie-parser');
 const { requireAuth,checkOwner, checkUser } = require('./middleware/authMiddleware');
 const eventRoutes = require('./routes/EventRoutes')
+const applyRoutes = require('./routes/applyRoutes')
 const app = express();
 
 // middleware
@@ -16,7 +17,7 @@ app.set('view engine', 'ejs');
 
 // database connection
 const dbURI = 'mongodb+srv://snehal:test@cc.8hdyetj.mongodb.net/test?retryWrites=true&w=majority&appName=CC';
-mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(dbURI)
   .then((result) => app.listen(3000))
   .catch((err) => console.log(err));
 
@@ -24,6 +25,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 // routes
 app.use('/events',eventRoutes);
+app.use(applyRoutes);
 app.get('*', checkUser);
 app.get('/', (req, res) => res.render('home'));
 app.get('/geneticx', requireAuth, (req, res) => res.render('geneticx'));

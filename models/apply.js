@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const { isEmail } = require('validator');
 const applySchema = new Schema({
     email: {
         type: String,
@@ -26,5 +27,5 @@ const applySchema = new Schema({
     }
 },{timestamps:true});
 
-const Apply = mongoose.model('Apply',applySchema);
+const Apply = mongoose.model('apply',applySchema);
 module.exports = Apply;
